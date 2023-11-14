@@ -5102,7 +5102,7 @@ function onStreamStarted($video) {
     // StreamBadges.resolution = {width: $video.videoWidth, height: $video.videoHeight};
     // Sat: edit more here
     // const osName = (PREF_STREAM_TARGET_RESOLUTION !== '1080p') ? 'android' : 'windows';
-    const streamRes = Preferences.STREAM_TARGET_RESOLUTION;
+    const streamRes = PREFS.get(Preferences.STREAM_TARGET_RESOLUTION);
     if(streamRes !== '720p' || streamRes !== '1080p'){
       console.log("is not 7s0p or 1080p");
       // the other left options is 480p, 360p, 240p
