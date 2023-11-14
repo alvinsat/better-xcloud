@@ -4592,8 +4592,13 @@ function getVideoPlayerFilterStyle() {
 
     const clarity = PREFS.get(Preferences.VIDEO_CLARITY);
     if (clarity != 0) {
+        // const level = (7 - (clarity - 1) * 0.5).toFixed(1); // 5, 5.5, 6, 6.5, 7
+        // const matrix = `0 -1 0 -1 ${level} -1 0 -1 0`;
+
+        // experimental sharpness
         const level = (7 - (clarity - 1) * 0.5).toFixed(1); // 5, 5.5, 6, 6.5, 7
-        const matrix = `0 -1 0 -1 ${level} -1 0 -1 0`;
+        const matrix = `-1 -1 -1 -1 ${9*level} -1 -1 -1 -1`;
+
         document.getElementById('bx-filter-clarity-matrix').setAttributeNS(null, 'kernelMatrix', matrix);
 
         filters.push(`url(#bx-filter-clarity)`);
@@ -5110,17 +5115,14 @@ function onStreamStarted($video) {
       let scalerIsH = 1;
       console.log("scaler is "+scalerIs);
       if(streamRes === '480p'){
-        // console.log("is 480p");
-        // console.log("current stream res is "+$video.videoWidth);
-        //   StreamBadges.resolution = {width: 854, height: 480};  
-        scalerIs = $video.videoWidth/480;
+        scalerIs = $video.videoWidth/854;
         scalerIsH = $video.videoHeight/480;
       } else if(streamRes === '360p'){
-        scalerIs = $video.videoWidth/360;
+        scalerIs = $video.videoWidth/640;
         scalerIsH = $video.videoHeight/360;
       } else if(streamRes === '240p'){
-        scalerIs = $video.videoWidth/240;
-        scalerIsH = $video.videoHeight/360;         
+        scalerIs = $video.videoWidth/426;
+        scalerIsH = $video.videoHeight/240;         
       } 
       StreamBadges.resolution = {width: ($video.videoWidth/scalerIs), height: ($video.videoHeight/scalerIsH)};        
     }else{
