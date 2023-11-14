@@ -5104,16 +5104,25 @@ function onStreamStarted($video) {
     // const osName = (PREF_STREAM_TARGET_RESOLUTION !== '1080p') ? 'android' : 'windows';
     const streamRes = PREF_STREAM_TARGET_RESOLUTION;
     if(streamRes !== '720p' || streamRes !== '1080p'){
+      console.log("is not 7s0p or 1080p");
       // the other left options is 480p, 360p, 240p
+      let scalerIs = 1;
+      let scalerIsH = 1;
+      console.log("scaler is "+scalerIs);
       if(streamRes === '480p'){
-          StreamBadges.resolution = {width: 854, height: 480};          
+        // console.log("is 480p");
+        // console.log("current stream res is "+$video.videoWidth);
+        //   StreamBadges.resolution = {width: 854, height: 480};  
+        scalerIs = $video.videoWidth/480;
+        scalerIsH = $video.videoHeight/480;
       } else if(streamRes === '360p'){
-          StreamBadges.resolution = {width: 640, height: 360};          
+        scalerIs = $video.videoWidth/360;
+        scalerIsH = $video.videoHeight/360;
       } else if(streamRes === '240p'){
-          StreamBadges.resolution = {width: 426, height: 240};         
-      } else {
-          StreamBadges.resolution = {width: 854, height: 480};          
+        scalerIs = $video.videoWidth/240;
+        scalerIsH = $video.videoHeight/360;         
       } 
+      StreamBadges.resolution = {width: ($video.videoWidth/scalerIs), height: ($video.videoHeight/scalerIsH)};        
     }else{
       StreamBadges.resolution = {width: ($video.videoWidth), height: ($video.videoHeight)};
     }
