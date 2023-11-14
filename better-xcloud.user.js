@@ -5100,7 +5100,23 @@ function onStreamStarted($video) {
     $SCREENSHOT_CANVAS.height = $video.videoHeight;
 
     // StreamBadges.resolution = {width: $video.videoWidth, height: $video.videoHeight};
-    StreamBadges.resolution = {width: ($video.videoWidth/2), height: ($video.videoHeight/2)};
+    // Sat: edit more here
+    // const osName = (PREF_STREAM_TARGET_RESOLUTION !== '1080p') ? 'android' : 'windows';
+    const streamRes = PREF_STREAM_TARGET_RESOLUTION;
+    if(streamRes !== '720p' || streamRes !== '1080p'){
+      // the other left options is 480p, 360p, 240p
+      if(streamRes === '480p'){
+          StreamBadges.resolution = {width: 854, height: 480};          
+      } else if(streamRes === '360p'){
+          StreamBadges.resolution = {width: 640, height: 360};          
+      } else if(streamRes === '240p'){
+          StreamBadges.resolution = {width: 426, height: 240};         
+      } else {
+          StreamBadges.resolution = {width: 854, height: 480};          
+      } 
+    }else{
+      StreamBadges.resolution = {width: ($video.videoWidth), height: ($video.videoHeight)};
+    }
     StreamBadges.startTimestamp = +new Date;
 
     // Get battery level
