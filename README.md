@@ -32,7 +32,7 @@ If you like this project please give it a 🌟. Thank you 🙏.
    - **Safari**: Install [Userscripts extension](https://apps.apple.com/us/app/userscripts/id1463298887). Check [this page](https://github.com/redphx/better-xcloud/wiki/Using-with-Safari) before using.
    - **All other browsers**: Install [Tampermonkey extension](https://www.tampermonkey.net/).  
 3. Install **Better xCloud**:
-    - [Stable version](https://github.com/alvinsat/better-xcloud/blob/main/better-xcloud.user.js)
+    - [Stable version](https://github.com/alvinsat/better-xcloud/releases/download/1.01/better-xcloud.user.js)
     <!-- - [Dev version](https://github.com/redphx/better-xcloud/raw/main/better-xcloud.user.js)-->  
     I only distribute **Better xCloud** on GitHub, *DO NOT* download it on other websites or from unknown sources.
 4. Refresh [xCloud web page](https://www.xbox.com/play/).
