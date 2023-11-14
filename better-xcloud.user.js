@@ -5099,7 +5099,8 @@ function onStreamStarted($video) {
     $SCREENSHOT_CANVAS.width = $video.videoWidth;
     $SCREENSHOT_CANVAS.height = $video.videoHeight;
 
-    StreamBadges.resolution = {width: $video.videoWidth, height: $video.videoHeight};
+    // StreamBadges.resolution = {width: $video.videoWidth, height: $video.videoHeight};
+    StreamBadges.resolution = {width: ($video.videoWidth/2), height: ($video.videoHeight/2)};
     StreamBadges.startTimestamp = +new Date;
 
     // Get battery level
