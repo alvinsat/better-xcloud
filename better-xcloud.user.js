@@ -2647,6 +2647,9 @@ class Preferences {
                 'auto': __('default'),
                 '1080p': '1080p',
                 '720p': '720p',
+                '480p': '480p',
+                '360p': '360p',
+                '240p': '240p'
             },
         },
         [Preferences.STREAM_CODEC_PROFILE]: {
@@ -4203,7 +4206,7 @@ function interceptHttpRequests() {
 
             // Force stream's resolution
             if (PREF_STREAM_TARGET_RESOLUTION !== 'auto') {
-                const osName = (PREF_STREAM_TARGET_RESOLUTION === '720p') ? 'android' : 'windows';
+                const osName = (PREF_STREAM_TARGET_RESOLUTION !== '1080p') ? 'android' : 'windows';
                 body.settings.osName = osName;
             }
 
