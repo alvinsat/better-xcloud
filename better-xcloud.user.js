@@ -3219,7 +3219,7 @@ function checkForUpdate() {
 
     // Start checking
     PREFS.set(Preferences.LAST_UPDATE_CHECK, now);
-    fetch('https://api.github.com/repos/redphx/better-xcloud/releases/latest')
+    fetch('https://api.github.com/repos/alvinsat/better-xcloud/releases/latest')
         .then(response => response.json())
         .then(json => {
             // Store the latest version
