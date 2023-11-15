@@ -4592,12 +4592,12 @@ function getVideoPlayerFilterStyle() {
 
     const clarity = PREFS.get(Preferences.VIDEO_CLARITY);
     if (clarity != 0) {
-        // const level = (7 - (clarity - 1) * 0.5).toFixed(1); // 5, 5.5, 6, 6.5, 7
-        // const matrix = `0 -1 0 -1 ${level} -1 0 -1 0`;
-
-        // experimental sharpness
         const level = (7 - (clarity - 1) * 0.5).toFixed(1); // 5, 5.5, 6, 6.5, 7
-        const matrix = `-1 -1 -1 -1 ${9*level} -1 -1 -1 -1`;
+        const matrix = `0 -1 0 -1 ${level} -1 0 -1 0`;
+
+        // experimental sharpness, I think is too heavy
+        // const level = (7 - (clarity - 1) * 0.5).toFixed(1); // 5, 5.5, 6, 6.5, 7
+        // const matrix = `-1 -1 -1 -1 ${9*level} -1 -1 -1 -1`;
 
         document.getElementById('bx-filter-clarity-matrix').setAttributeNS(null, 'kernelMatrix', matrix);
 
