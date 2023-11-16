@@ -10,9 +10,9 @@ Supported platforms:
 This script makes me spend more time with xCloud, and I hope the same thing happens to you.  
 If you like this project please give it a 🌟. Thank you 🙏.
 
-[![Latest version](https://img.shields.io/github/v/release/alvinsat/better-xcloud?label=latest)](https://github.com/redphx/better-xcloud/releases) 
-[![Total downloads](https://img.shields.io/github/downloads/alvinsat/better-xcloud/total?color=%23e15f2c)](https://github.com/redphx/better-xcloud/releases) 
-[![Total stars](https://img.shields.io/github/stars/alvinsat/better-xcloud?color=%23cca400)](https://github.com/redphx/better-xcloud/stargazers)  
+[![Latest version](https://img.shields.io/github/v/release/alvinsat/better-xcloud?label=latest)](https://github.com/alvinsat/better-xcloud/releases) 
+[![Total downloads](https://img.shields.io/github/downloads/alvinsat/better-xcloud/total?color=%23e15f2c)](https://github.com/alvinsat/better-xcloud/releases) 
+[![Total stars](https://img.shields.io/github/stars/alvinsat/better-xcloud?color=%23cca400)](https://github.com/alvinsat/better-xcloud/stargazers)  
 
 
 ## Table of Contents
